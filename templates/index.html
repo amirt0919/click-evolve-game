@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鍛造之路 | 點擊升級</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <div class="scene">
+
+    <header class="eyebrow">鍛造之路 · THE FORGING PATH</header>
+
+    <main class="forge-card" id="forgeCard">
+      <div class="stage-index" id="stageIndex">階段 I / {{ max_level + 1 }}</div>
+
+      <button class="weapon-anvil" id="weaponBtn" aria-label="點擊鍛造">
+        <span class="weapon-glow" id="weaponGlow"></span>
+        <span class="weapon-emoji" id="weaponEmoji">🌿</span>
+      </button>
+
+      <h1 class="weapon-name" id="weaponName">嫩樹枝</h1>
+      <p class="hint" id="hintText">點擊武器,嘗試鍛造升級</p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="stat-label">點擊次數</span>
+          <span class="stat-value" id="clickCount">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">進度</span>
+          <span class="stat-value" id="progressValue">1 / {{ max_level + 1 }}</span>
+        </div>
+      </div>
+    </main>
+
+    <section class="log-panel">
+      <div class="log-title">鍛造紀錄</div>
+      <ul class="log-list" id="logList">
+        <li class="log-empty">尚未鍛造出任何成果</li>
+      </ul>
+    </section>
+
+  </div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
